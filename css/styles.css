@@ -548,16 +548,13 @@ address {
   margin-bottom: 16px;
 }
 .footer-form {
-}
-
-.footer-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .subscribe-input {
-  background-color: #2e2f42;
+  background-color: transparent;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -565,41 +562,44 @@ address {
   min-width: 264px;
   height: 40px;
 
-  color: #fff;
-  /* font-family: Roboto; */
+  color: #ffffff;
   font-size: 12px;
-  line-height: 2; /* 200% */
-  letter-spacing: 0.04em; /* 0.48px/12 */
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 
   border-radius: 4px;
-  border: 1px solid #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ffffff;
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15); */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.subscribe-input::placeholder {
+  color: #ffffff;
 }
 
 .footer-subscribe-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 16px; */
   padding: 8px 24px;
   border-radius: 4px;
+  border: none;
   background: #4d5ae5;
-  color: #fff;
-  /* text-align: center; */
+  color: #ffffff;
   font-family: Roboto;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5; /* 150% */
-  letter-spacing: 0.04em; /* 0.64px/16 */
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 
   min-width: 165px;
   height: 40px;
 }
 
-.footer-subscribe-btn-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
 .footer-subscribe-svg {
   fill: #ffffff;
+  margin-left: 16px;
 }
 
 /*! MODAL WINDOW */
@@ -613,6 +613,8 @@ address {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   min-width: 408px;
@@ -624,6 +626,9 @@ address {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px;
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn {
@@ -636,11 +641,14 @@ address {
   position: absolute;
   right: 24px;
   top: 24px;
+  width: 24px;
+  height: 24px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-icon {
@@ -648,13 +656,15 @@ address {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-btn:hover .modal-btn-icon {
-  fill: #ffffff;
-}
-
+.modal-btn:focus,
 .modal-btn:hover {
   background-color: #404bbf;
   border: none;
+}
+
+.modal-btn:focus .modal-btn-icon,
+.modal-btn:hover .modal-btn-icon {
+  fill: #ffffff;
 }
 
 .modal-title {
@@ -729,8 +739,10 @@ address {
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   background-color: inherit;
-  color: #000;
-  font-size: 18px;
+  color: rgba(46, 47, 66, 0.4);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   padding: 8px 16px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -763,7 +775,7 @@ address {
 }
 
 .check-icon-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-right: 8px;
@@ -773,6 +785,7 @@ address {
   border-radius: 2px;
   fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -785,6 +798,9 @@ address {
 .modal-submit {
   display: block;
   margin: 0 auto;
+  min-width: 169px;
+  height: 56px;
+
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
@@ -793,7 +809,7 @@ address {
 
   color: #fff;
   text-align: center;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
