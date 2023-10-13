@@ -701,13 +701,11 @@ address {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus,
-.modal-input:hover {
+.modal-input:focus {
   border-color: #4d5ae5;
 }
 
-.modal-input:focus + .modal-icon,
-.modal-input:hover + .modal-icon {
+.modal-input:focus + .modal-icon {
   fill: #4d5ae5;
 }
 
@@ -725,7 +723,35 @@ address {
   resize: none;
 }
 
-.modal-text:focus,
-.modal-text:hover {
+.modal-text:focus {
   border-color: #4d5ae5;
+}
+
+.modal-check {
+}
+.modal-span {
+  color: #4d5ae5;
+  line-height: 16px;
+  text-decoration-line: underline;
+}
+
+.modal-check-label {
+  display: inline;
+}
+
+.modal-submit {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
+  border-radius: 4px;
+  background: #4d5ae5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em; /* 0.64px/16 */
 }
