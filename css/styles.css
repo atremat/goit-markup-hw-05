@@ -758,9 +758,6 @@ address {
 }
 
 .check-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #8e8f99;
   font-size: 12px;
   line-height: 1.17; /* 116.667% */
